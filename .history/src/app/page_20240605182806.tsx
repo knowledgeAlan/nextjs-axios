@@ -17,7 +17,7 @@ const axiosInstance = axios.create({
 
 const fetchData = async ( url:string , options = {}) => { 
   try {
-    const response = await axios.get(url);
+    const response = await axiosInstance(url, options);
     return response.data;
   } catch (error) {
     console.error('Error retrieving data:', error);
@@ -54,12 +54,6 @@ export default function Home() {
     
    
      console.log("order==res===",res);
-
-
-     let res1 = await fetchData("https://api.ipify.org/?format=json");
-
-     console.log("order==res1===",res1);
-
   }
 
   useEffect(()=>{

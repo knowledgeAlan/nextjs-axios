@@ -17,7 +17,7 @@ const axiosInstance = axios.create({
 
 const fetchData = async ( url:string , options = {}) => { 
   try {
-    const response = await axios.get(url);
+    const response = await axiosInstance(url, options);
     return response.data;
   } catch (error) {
     console.error('Error retrieving data:', error);

@@ -1,0 +1,166 @@
+{
+    "sourceFile": "src/app/page.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 37,
+            "patches": [
+                {
+                    "date": 1717577336036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1717577346502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Image from \"next/image\";\n \n export default function Home() {\n   return (\n-    <main className=\"flex min-h-screen flex-col items-center justify-between p-24\">\n+    <main className=\"flex  \">\n       \n     </main>\n   );\n }\n"
+                },
+                {
+                    "date": 1717577355293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Image from \"next/image\";\n \n export default function Home() {\n   return (\n-    <main className=\"flex  \">\n+    <main className=\"  \">\n       \n     </main>\n   );\n }\n"
+                },
+                {
+                    "date": 1717577365571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Image from \"next/image\";\n \n export default function Home() {\n   return (\n-    <main className=\"  \">\n+    <main className=\"bg-white\">\n       \n     </main>\n   );\n }\n"
+                },
+                {
+                    "date": 1717577378454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Image from \"next/image\";\n \n export default function Home() {\n   return (\n-    <main className=\"bg-white\">\n+    <main className=\"flex bg-white\">\n       \n     </main>\n   );\n }\n"
+                },
+                {
+                    "date": 1717577386505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import Image from \"next/image\";\n \n export default function Home() {\n   return (\n-    <main className=\"flex bg-white\">\n+    <main className=\" bg-white\">\n       \n     </main>\n   );\n }\n"
+                },
+                {
+                    "date": 1717577437206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import Image from \"next/image\";\n+ \n \n export default function Home() {\n   return (\n     <main className=\" bg-white\">\n"
+                },
+                {
+                    "date": 1717577458977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n  \n \n export default function Home() {\n   return (\n-    <main className=\" bg-white\">\n+    <main className=\"\">\n       \n     </main>\n   );\n }\n"
+                },
+                {
+                    "date": 1717579398891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n  \n+import { useSearchParams } from 'next/navigation'\n \n+\n export default function Home() {\n   return (\n     <main className=\"\">\n       \n"
+                },
+                {
+                    "date": 1717579416681,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,12 @@\n import { useSearchParams } from 'next/navigation'\n \n \n export default function Home() {\n+\n+  const paymentLinkId:string|null =searchParams.get('id');\n+\n+  console.log(\"order==paymentLinkId==parameter==\",paymentLinkId);\n   return (\n     <main className=\"\">\n       \n     </main>\n"
+                },
+                {
+                    "date": 1717579434198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,11 @@\n \n \n export default function Home() {\n \n+  const searchParams = useSearchParams();\n+ \n+\n   const paymentLinkId:string|null =searchParams.get('id');\n \n   console.log(\"order==paymentLinkId==parameter==\",paymentLinkId);\n   return (\n"
+                },
+                {
+                    "date": 1717579470805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n- \n+\n+\"use client\"\n import { useSearchParams } from 'next/navigation'\n \n \n export default function Home() {\n"
+                },
+                {
+                    "date": 1717579574041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n \n \"use client\"\n+import React,{Suspense} from 'react'\n+\n+ \n+\n import { useSearchParams } from 'next/navigation'\n \n \n export default function Home() {\n@@ -11,9 +15,12 @@\n   const paymentLinkId:string|null =searchParams.get('id');\n \n   console.log(\"order==paymentLinkId==parameter==\",paymentLinkId);\n   return (\n-    <main className=\"\">\n+    <Suspense>\n+<main className=\"\">\n       \n-    </main>\n+      </main>\n+    </Suspense>\n+    \n   );\n }\n"
+                },
+                {
+                    "date": 1717580171893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,22 +5,17 @@\n  \n \n import { useSearchParams } from 'next/navigation'\n \n+import Order from './pages/order'\n \n+\n export default function Home() {\n \n-  const searchParams = useSearchParams();\n  \n-\n-  const paymentLinkId:string|null =searchParams.get('id');\n-\n-  console.log(\"order==paymentLinkId==parameter==\",paymentLinkId);\n   return (\n     <Suspense>\n-<main className=\"\">\n-      \n-      </main>\n+      <Order/>\n     </Suspense>\n     \n   );\n }\n"
+                },
+                {
+                    "date": 1717580390678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,14 @@\n \n \n export default function Home() {\n \n+  const searchParams = useSearchParams();\n  \n+\n+  const paymentLinkId:string|null =searchParams.get('id');\n+\n+  console.log(\"order==paymentLinkId==parameter==\",paymentLinkId);\n   return (\n     <Suspense>\n       <Order/>\n     </Suspense>\n"
+                },
+                {
+                    "date": 1717580565812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,25 @@\n  \n \n import { useSearchParams } from 'next/navigation'\n \n-import Order from './pages/order'\n+  function Order() {\n+     \n+ \n \n+  const paymentLinkId:string|null =useSearchParams().get('id');\n \n+  console.log(\"order==paymentLinkId=order=parameter==\",paymentLinkId);\n+\n+  return (\n+      <div>\n+          order\n+      </div>\n+  )\n+}\n+\n+\n+\n export default function Home() {\n \n   const searchParams = useSearchParams();\n  \n"
+                },
+                {
+                    "date": 1717580597687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,14 +24,9 @@\n \n \n export default function Home() {\n \n-  const searchParams = useSearchParams();\n- \n-\n-  const paymentLinkId:string|null =searchParams.get('id');\n-\n-  console.log(\"order==paymentLinkId==parameter==\",paymentLinkId);\n+  \n   return (\n     <Suspense>\n       <Order/>\n     </Suspense>\n"
+                },
+                {
+                    "date": 1717581513743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \n \"use client\"\n import React,{Suspense} from 'react'\n \n- \n+import fetch from 'unfetch'\n \n import { useSearchParams } from 'next/navigation'\n \n   function Order() {\n"
+                },
+                {
+                    "date": 1717581588002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \n \"use client\"\n import React,{Suspense} from 'react'\n \n-import fetch from 'unfetch'\n+import fetch from \"unfetch\";\n \n import { useSearchParams } from 'next/navigation'\n \n   function Order() {\n"
+                },
+                {
+                    "date": 1717581641970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n \n \"use client\"\n import React,{Suspense} from 'react'\n \n-import fetch from \"unfetch\";\n \n+\n import { useSearchParams } from 'next/navigation'\n \n+import fetch from \"unfetch\";\n+\n   function Order() {\n      \n  \n \n"
+                },
+                {
+                    "date": 1717581679811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,11 @@\n \n \"use client\"\n import React,{Suspense} from 'react'\n \n-\n-\n import { useSearchParams } from 'next/navigation'\n \n-import fetch from \"unfetch\";\n+import fetch from \"unfetch/polyfill\";\n \n   function Order() {\n      \n  \n"
+                },
+                {
+                    "date": 1717581715063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,8 +24,12 @@\n \n \n export default function Home() {\n \n+  let url:string = \"\";\n+  const fetcher = url => fetch(url).then(r => r.json());\n+\n+  const { data, error } = useSWR('/api/data', fetcher)\n   \n   return (\n     <Suspense>\n       <Order/>\n"
+                },
+                {
+                    "date": 1717581762041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n \n \"use client\"\n-import React,{Suspense} from 'react'\n+import React,{Suspense} from 'react';\n \n-import { useSearchParams } from 'next/navigation'\n+import { useSearchParams } from 'next/navigation';\n+import useSWR from 'swr';\n \n import fetch from \"unfetch/polyfill\";\n \n   function Order() {\n"
+                },
+                {
+                    "date": 1717581789092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n \n export default function Home() {\n \n-  let url:string = \"\";\n+  let url:string = \"https://api.ipify.org/?format=json\";\n   const fetcher = url => fetch(url).then(r => r.json());\n \n   const { data, error } = useSWR('/api/data', fetcher)\n   \n"
+                },
+                {
+                    "date": 1717581794838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n   let url:string = \"https://api.ipify.org/?format=json\";\n   const fetcher = url => fetch(url).then(r => r.json());\n \n-  const { data, error } = useSWR('/api/data', fetcher)\n+  const { data, error } = useSWR(url, fetcher)\n   \n   return (\n     <Suspense>\n       <Order/>\n"
+                },
+                {
+                    "date": 1717581814070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,11 @@\n \n   let url:string = \"https://api.ipify.org/?format=json\";\n   const fetcher = url => fetch(url).then(r => r.json());\n \n-  const { data, error } = useSWR(url, fetcher)\n+  const { data, error } = useSWR(url, fetcher);\n+\n+  console.log(\"data====\",data);\n   \n   return (\n     <Suspense>\n       <Order/>\n"
+                },
+                {
+                    "date": 1717581854858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { useSearchParams } from 'next/navigation';\n import useSWR from 'swr';\n \n-import fetch from \"unfetch/polyfill\";\n+import fetch from 'unfetch'\n \n   function Order() {\n      \n  \n"
+                },
+                {
+                    "date": 1717581886328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { useSearchParams } from 'next/navigation';\n import useSWR from 'swr';\n \n-import fetch from 'unfetch'\n+import 'unfetch/polyfill'\n \n   function Order() {\n      \n  \n"
+                },
+                {
+                    "date": 1717582175586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,14 +25,23 @@\n \n \n export default function Home() {\n \n-  let url:string = \"https://api.ipify.org/?format=json\";\n-  const fetcher = url => fetch(url).then(r => r.json());\n+  const test = async()=>{\n \n-  const { data, error } = useSWR(url, fetcher);\n+   \n+  \n+    const res = await fetch('https://api.ipify.org/?format=json')\n+    // The return value is *not* serialized\n+    // You can return Date, Map, Set, etc.\n+   \n+    \n+   \n+     console.log(\"order==res===\",res);\n+  }\n \n-  console.log(\"data====\",data);\n+\n+ \n   \n   return (\n     <Suspense>\n       <Order/>\n"
+                },
+                {
+                    "date": 1717582187406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \n \"use client\"\n-import React,{Suspense} from 'react';\n+import React,{Suspense,useEffect} from 'react';\n \n import { useSearchParams } from 'next/navigation';\n import useSWR from 'swr';\n \n"
+                },
+                {
+                    "date": 1717582205215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,11 @@\n    \n      console.log(\"order==res===\",res);\n   }\n \n+  useEffect(()=>{\n+    test();\n+  },[])\n \n  \n   \n   return (\n"
+                },
+                {
+                    "date": 1717582220186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { useSearchParams } from 'next/navigation';\n import useSWR from 'swr';\n \n-import 'unfetch/polyfill'\n+ \n \n   function Order() {\n      \n  \n"
+                },
+                {
+                    "date": 1717582975967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n import { useSearchParams } from 'next/navigation';\n import useSWR from 'swr';\n \n- \n+import axios from 'axios';\n \n   function Order() {\n      \n  \n"
+                },
+                {
+                    "date": 1717583091702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,25 @@\n import useSWR from 'swr';\n \n import axios from 'axios';\n \n+const axiosInstance = axios.create({\n+  baseURL: 'https://api.ipify.org/?format=json',\n+  timeout: 5000, // Timeout if necessary\n+  headers: {\n+    \n+  },\n+});\n+\n+const fetchData = async ( url:string , options = {}) => { \n+  try {\n+    const response = await axiosInstance(url, options);\n+    return response.data;\n+  } catch (error) {\n+    console.error('Error retrieving data:', error);\n+    throw new Error('Could not get data');\n+  }\n+};\n   function Order() {\n      \n  \n \n"
+                },
+                {
+                    "date": 1717583286297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n const axiosInstance = axios.create({\n   baseURL: 'https://api.ipify.org/?format=json',\n   timeout: 5000, // Timeout if necessary\n   headers: {\n-    \n+    \"Access-Control-Allow-Origin\": \"*\",\n   },\n });\n \n const fetchData = async ( url:string , options = {}) => { \n"
+                },
+                {
+                    "date": 1717583334074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,8 +53,14 @@\n    \n     \n    \n      console.log(\"order==res===\",res);\n+\n+\n+     let res1 = await fetchData(\"https://api.ipify.org/?format=json\");\n+\n+     console.log(\"order==res1===\",res1);\n+\n   }\n \n   useEffect(()=>{\n     test();\n"
+                },
+                {
+                    "date": 1717583589964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,11 @@\n });\n \n const fetchData = async ( url:string , options = {}) => { \n   try {\n-    const response = await axiosInstance(url, options);\n+    const response = await axios.get(url, options,{headers: {\n+      \"Access-Control-Allow-Origin\": \"*\",\n+    }});\n     return response.data;\n   } catch (error) {\n     console.error('Error retrieving data:', error);\n     throw new Error('Could not get data');\n"
+                },
+                {
+                    "date": 1717583632692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,9 @@\n });\n \n const fetchData = async ( url:string , options = {}) => { \n   try {\n-    const response = await axios.get(url, options,{headers: {\n-      \"Access-Control-Allow-Origin\": \"*\",\n-    }});\n+    const response = await axios.get(url);\n     return response.data;\n   } catch (error) {\n     console.error('Error retrieving data:', error);\n     throw new Error('Could not get data');\n"
+                }
+            ],
+            "date": 1717577336036,
+            "name": "Commit-0",
+            "content": "import Image from \"next/image\";\n\nexport default function Home() {\n  return (\n    <main className=\"flex min-h-screen flex-col items-center justify-between p-24\">\n      \n    </main>\n  );\n}\n"
+        }
+    ]
+}

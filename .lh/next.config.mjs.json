@@ -1,0 +1,30 @@
+{
+    "sourceFile": "next.config.mjs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1717577572361,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1717577662058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n /** @type {import('next').NextConfig} */\n const nextConfig = {\n+    output: 'export',\n     basePath: '/nextjs-axios',\n };\n \n export default nextConfig;\n"
+                },
+                {
+                    "date": 1717579613486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n /** @type {import('next').NextConfig} */\n const nextConfig = {\n     output: 'export',\n     basePath: '/nextjs-axios',\n+    missingSuspenseWithCSRBailout: false,\n };\n \n export default nextConfig;\n"
+                },
+                {
+                    "date": 1717579708737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n /** @type {import('next').NextConfig} */\n const nextConfig = {\n     output: 'export',\n     basePath: '/nextjs-axios',\n-    missingSuspenseWithCSRBailout: false,\n+     \n };\n \n export default nextConfig;\n"
+                }
+            ],
+            "date": 1717577572361,
+            "name": "Commit-0",
+            "content": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n    basePath: '/nextjs-axios',\n};\n\nexport default nextConfig;\n"
+        }
+    ]
+}
